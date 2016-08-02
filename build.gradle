@@ -1,4 +1,3 @@
-apply plugin: 'java'
 
 buildscript {
     repositories {
@@ -11,12 +10,20 @@ buildscript {
 }
 
 apply plugin: "io.ratpack.ratpack-java"
+apply plugin: "idea"
 apply plugin: 'com.github.johnrengelman.shadow'
 
 repositories {
     jcenter()
 }
 
+dependencies {
+    runtime "org.slf4j:slf4j-simple:1.7.12"
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '2.14.1'
 }
+
+mainClassName = "com.ev.Main"
+
